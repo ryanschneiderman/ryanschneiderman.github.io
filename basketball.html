@@ -212,7 +212,10 @@
       }
     function create_taper (){
       var taper = $("#taper");
-      taper_sidebar();
+      var sidebar_width = $("#sidebar").width();
+      var sidebar_left = $("#sidebar").position().left;
+      var sidebar_height = $("#sidebar").width();
+      var taper_width = sidebar_width / 2.5;
       taper.css({
         "position": "fixed",
           "width" : "0",
@@ -221,6 +224,8 @@
           "border-color": "transparent transparent white transparent",
           "z-index": "3",
           "left": "12%",
+          "border-width": "0 0 100vh " + taper_width + "px",
+          "left": sidebar_left + sidebar_width - taper_width,
       });
       
     }
