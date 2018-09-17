@@ -212,6 +212,7 @@
       }
     function create_taper (){
       var taper = $("#taper");
+      taper_sidebar();
       taper.css({
         "position": "fixed",
           "width" : "0",
@@ -221,7 +222,7 @@
           "z-index": "3",
           "left": "12%",
       });
-      taper_sidebar();
+      
     }
 
     $(window).resize(function() {
