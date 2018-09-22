@@ -30,6 +30,9 @@
         padding-bottom: 1%; 
         padding-left: 7%;
         padding-top: 1%;
+        -webkit-box-shadow: 0px 20px 30px -15px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 20px 30px -15px rgba(0,0,0,0.75);
+        box-shadow: 0px 20px 30px -15px rgba(0,0,0,0.75);
       }
 
       #headers{
@@ -61,21 +64,24 @@
         text-align: center;
         padding-top: 3%;
         font-size: 2.5vw;
+        padding-left: 5%;
       }
 
       #sidebar{
-          color: white;
-          position: fixed;
-          font-size: 1.2vw;
-          width: 15%;
-          height:100%;
-          background-color: #3E3E3E;
-          z-index: 2;
-        }
+        color: white;
+        position: fixed;
+        font-size: 1.2vw;
+        width: 15%;
+        height:100%;
+        background-image: url("sidebar.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        z-index: 2;
+      }
 
       p {
         text-align: justify;
-        padding-left: 17%;
+        padding-left: 25%;
         padding-right: 15%;
         font-size: 1.3vw;
       }
@@ -97,6 +103,10 @@
 
         #sidebar-line{
           padding-left: 5%;
+      }
+
+      .sidebar-link{
+        z-index: 3;
       }
 
       a.sidebar-link:visited {
@@ -140,7 +150,7 @@
           <div class = "sidebar"><a class = "sidebar-link" id = "selected" href = "basketball.html">Coaching</a></div>
         </div>
       </div>
-      <div id = "taper"></div>
+      
       <div id = "headers">
         <div id = "header" >Basketball Coaching</div>
       </div>
@@ -195,44 +205,13 @@
       $("#content").css("padding-top", header_height);
     }
 
-    function taper_sidebar(){
-          var sidebar_width = $("#sidebar").width();
-          var sidebar_left = $("#sidebar").position().left;
-          var sidebar_height = $("#sidebar").height();
-          var taper_width = sidebar_width / 2.5;
-          var taper = $("#taper");
-          taper.css("border-width", "0 0 100vh " + taper_width + "px");
-          taper.css("left", sidebar_left + sidebar_width - taper_width +1);
-      }
-    function create_taper (){
-      var taper = $("#taper");
-      var sidebar_width = $("#sidebar").width();
-      var sidebar_left = $("#sidebar").position().left;
-      var sidebar_height = $("#sidebar").height();
-      var taper_width = sidebar_width / 2.5;
-      taper.css({
-        "position": "fixed",
-          "width" : "0",
-          "height": "0",
-          "border-style": "solid",
-          "border-color": "transparent transparent white transparent",
-          "z-index": "3",
-          "left": "12%",
-          "border-width": "0 0 100vh " + taper_width + "px",
-          "left": sidebar_left + sidebar_width - taper_width + 1,
-      });
-      
-    }
 
     $(window).resize(function() {
       content_padding();
-      taper_sidebar();
     });
 
     $(window).on('load', function () {
       content_padding();
-      create_taper();
-      taper_sidebar();
     });
   </script> 
 </html>

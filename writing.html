@@ -16,6 +16,7 @@
         color: #3E3E3E;
       }
       #header{
+        position: relative;
         font-size: 5vw;
         font-weight: 300;
         margin: auto;
@@ -23,6 +24,9 @@
         padding-bottom: 1%; 
         padding-left: 7%;
         padding-top: 1%;
+        -webkit-box-shadow: 0px 20px 30px -15px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 20px 30px -15px rgba(0,0,0,0.75);
+        box-shadow: 0px 20px 30px -15px rgba(0,0,0,0.75);
       }
 
       #content {
@@ -61,14 +65,16 @@
         font-size: 1.5vw;
       }
       #sidebar{
-          color: white;
-          position: fixed;
-          font-size: 1.2vw;
-          width: 15%;
-          height:100%;
-          background-color: #3E3E3E;
-          z-index: 2;
-        }
+        color: white;
+        position: fixed;
+        font-size: 1.2vw;
+        width: 15%;
+        height:100%;
+        background-image: url("sidebar.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        z-index: 2;
+      }
 
         .sidebar{
           padding-left: 5%;
@@ -153,16 +159,11 @@
       <div id = "taper"></div>
       <div id = "headers">
         <div id = "header" >Writing</div>
-        <div id = "line">
-          <svg style = "height: 1px; width: 85%;" id = "header-line">
-                <line  x1="0" y1="0" x2="100%" y2="0" style="stroke:#3E3E3E;stroke-width:2"/>
-            </svg>
-          </div>  
       </div>
       <div id = "content">
       <div class = "header2">Selected Essays and Articles</div>
       <div class = "article"><a class = "article-link" href = "Heideggerian_Notions_in_Seeing_While_Moving.pdf">Heideggerian Notions in <span style = "font-style: italic">Seeing While Moving</span></a></div>
-      <div class = "article"><a class = "article-link" href = "What_is_Visual_Studies?.pdf">What is Visual Studies? - Barthes's Signs and the Yen Satori</a></div>
+      <div class = "article"><a class = "article-link" href = "What_is_Visual_Studies.pdf">What is Visual Studies? - Barthes's Signs and the Yen Satori</a></div>
       <div class = "article"><a class = "article-link" href = "Implications_of_a_Dualistic_Force.pdf">Implications of a Dualistic Force in the Star Wars Prequel Trilogy</a></div>
       <div class = "article"><a class = "article-link" href = "Problem_of_Socioeconomic_Diversity_at_Tufts.pdf">The Problem of Socioeconomic Diversity at Tufts</a></div>
       <div class = "article"><a class = "article-link" href = "A_Commentary_on_the_NFLs_Opioid_Crisis.pdf">A Commentary on the NFL’s Opioid Crisis: Why is Cannabis Being Ignored?</a></div>
@@ -186,45 +187,13 @@
       $("#content").css("padding-top", header_height);
     }
 
-    function taper_sidebar(){
-          var sidebar_width = $("#sidebar").width();
-          var sidebar_left = $("#sidebar").position().left;
-          var sidebar_height = $("#sidebar").width();
-          var taper_width = sidebar_width / 2.5;
-          var taper = $("#taper-contents");
-          taper.css("border-width", "0 0 100vh " + taper_width + "px");
-          taper.css("left", sidebar_left + sidebar_width - taper_width +1);
-      }
-    function create_taper (){
-      $("#taper").append("<div id = 'taper-contents'></div>");
-      var taper = $("#taper-contents");
-      var sidebar_width = $("#sidebar").width();
-      var sidebar_left = $("#sidebar").position().left;
-      var sidebar_height = $("#sidebar").width();
-      var taper_width = sidebar_width / 2.5;
-      taper.css({
-        "position": "fixed",
-          "width" : "0",
-          "height": "0",
-          "border-style": "solid",
-          "border-color": "transparent transparent white transparent",
-          "z-index": "3",
-          "left": "12%",
-          "border-width": "0 0 100vh " + taper_width + "px",
-          "left": sidebar_left + sidebar_width - taper_width + 1,
-      });
-      
-    }
 
     $(window).resize(function() {
       content_padding();
-      taper_sidebar();
     });
 
     $(window).on('load', function () {
       content_padding();
-      create_taper();
-      taper_sidebar();
     });
 
   </script> 
