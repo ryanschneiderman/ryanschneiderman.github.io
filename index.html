@@ -6,7 +6,7 @@
   <style>
 
   table.center{
-  	margin-left:auto; 
+    margin-left:auto; 
     margin-right:auto;
   }
   #banner{
@@ -56,10 +56,10 @@
     transform:skewX(-7deg);
     overflow:hidden;
     width: 300px;
-  	height: 74.7%;
-  	z-index: 2;
-  	border-left: 6px solid white;
-  	border-right: 6px solid white;
+    height: 74.7%;
+    z-index: 2;
+    border-left: 6px solid white;
+    border-right: 6px solid white;
   }
   #second-pic:before{
     content:'';
@@ -86,49 +86,49 @@
   }
 
   a:visited {
-    	text-decoration: none;
-    	color: #1A1A1A;
-	}
+      text-decoration: none;
+      color: #1A1A1A;
+  }
   a:hover{
-		color: #1A1A1A;
-		-webkit-transition: all 0.2s linear;
+    color: #1A1A1A;
+    -webkit-transition: all 0.2s linear;
        -moz-transition: all 0.2s linear;
         -ms-transition: all 0.2s linear;
          -o-transition: all 0.2s linear;
             transition: all 0.2s linear;
    }
    a:link {
-    	text-decoration: none;
-    	color: #1A1A1A;
+      text-decoration: none;
+      color: #1A1A1A;
    }
 
 
   .middle {
-  		opacity: 0;
-  		position: absolute;
-  		font-family: 'Montserrat', sans-serif;
-  		font-weight: 500;
-  		text-align: center;
-  		font-size: 2.3vw;
+      opacity: 0;
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      text-align: center;
+      font-size: 2.3vw;
   }
 
   #mid1{
-  		left:14%;
+      left:14%;
   }
   #mid2{
-  		left:43%;
-  		z-index: 3;
+      left:43%;
+      z-index: 3;
   }
   #mid3{
-  		left:80%;
+      left:80%;
   }
 
   .image-container:hover .pic-links {
-  		opacity: .3;
+      opacity: .3;
   }
 
   .image-container:hover .middle {
- 		opacity: 1;
+    opacity: 1;
 
   }
 
@@ -141,7 +141,7 @@
  <body>
  <table class = "center">
  <tr>
- <td>	
+ <td> 
  <div id = "banner">
   <p id = "Name">RYAN SCHNEIDERMAN</p>
   <div id = "sub-header">
@@ -163,14 +163,14 @@
     <a href = "writing.html"><img id = "first-pic" class = "pic-links" src = "writing-tapered.jpg" ></a>
     <div class = "middle" id = "mid1"><a href = "writing.html"> Writing </a></div>
   </div>
-  <div class = "image-container">		
-  	<a href = "web_dev.html"><div id = "second-pic" class = "pic-links"></div></a>
-  	<div class = "middle" id = "mid2"><a href = "web_dev.html">Web Development </a></div>
+  <div class = "image-container">   
+    <a href = "web_dev.html"><div id = "second-pic" class = "pic-links"></div></a>
+    <div class = "middle" id = "mid2"><a href = "web_dev.html">Web Development </a></div>
   </div>
-  <div class = "image-container">			
+  <div class = "image-container">     
     <a href = "basketball.html"><img id = "third-pic" class = "pic-links" src = "basketball-tapered.jpg" ></a>
     <div class = "middle" id = "mid3"><a href = "basketball.html"> Coaching </a></div>
-  </div>	  
+  </div>    
  </div> 
 
 
@@ -178,52 +178,52 @@
 
  </body>
  <script>
- 	function getTanDeg(deg) {
-  		var rad = deg * Math.PI/180;
-  		return Math.tan(rad);
-	}
+  function getTanDeg(deg) {
+      var rad = deg * Math.PI/180;
+      return Math.tan(rad);
+  }
 
-	function shiftPic3 () {
-		var secondPicLeft = $("#second-pic").position().left;
-		var secondPicWidth = $("#second-pic").width();
-		$("#third-pic").css('left', secondPicLeft + secondPicWidth);
-	}
+  function shiftPic3 () {
+    var secondPicLeft = $("#second-pic").position().left;
+    var secondPicWidth = $("#second-pic").width();
+    $("#third-pic").css('left', secondPicLeft + secondPicWidth);
+  }
 
-	function shiftPic2 (){
-    	var shift =  $("#second-pic").height() / getTanDeg(83);
-    	$("#second-pic").css('right', shift);
-  	}
+  function shiftPic2 (){
+      var shift =  $("#second-pic").height() / getTanDeg(83);
+      $("#second-pic").css('right', shift);
+    }
 
 
- 	$( window ).resize(function() {
-  		var p1 = $("#first-pic").position()
- 		$("#third-pic").css('top', p1.top);
-		$("#second-pic").css("width", $("#first-pic").width() * 1.04);
-		$("#second-pic").css("height", $("#first-pic").height());
-		$("#third-pic").css("height", $("#first-pic").height());
-	  	$("#third-pic").css("width", $("#first-pic").width());
-	  	$(".middle").css("top", $("#first-pic").position().top * 1.4);
- 		shiftPic2();
- 		shiftPic3();
- 		$("second-level").css('margin', 'auto');
- 		
-	});
+  $( window ).resize(function() {
+      var p1 = $("#first-pic").position()
+    $("#third-pic").css('top', p1.top);
+    $("#second-pic").css("width", $("#first-pic").width() * 1.04);
+    $("#second-pic").css("height", $("#first-pic").height());
+    $("#third-pic").css("height", $("#first-pic").height());
+      $("#third-pic").css("width", $("#first-pic").width());
+      $(".middle").css("top", $("#first-pic").position().top * 1.4);
+    shiftPic2();
+    shiftPic3();
+    $("second-level").css('margin', 'auto');
+    
+  });
 
- 	$(window).on('load', function () {
-      	$("#second-pic").css("width", $("#first-pic").width() * 1.04);
-      	$("#second-pic").css("height", $("#first-pic").height());
-	  	$("#third-pic").css("height", $("#first-pic").height());
-	  	$("#third-pic").css("width", $("#first-pic").width());
+  $(window).on('load', function () {
+        $("#second-pic").css("width", $("#first-pic").width() * 1.04);
+        $("#second-pic").css("height", $("#first-pic").height());
+      $("#third-pic").css("height", $("#first-pic").height());
+      $("#third-pic").css("width", $("#first-pic").width());
 
-		shiftPic2();
-		shiftPic3();
-		var pos1 = $("#first-pic").position(); 
- 	});
+    shiftPic2();
+    shiftPic3();
+    var pos1 = $("#first-pic").position(); 
+  });
 
- 	$(".middle").css("top", $("#first-pic").position().top * 1.4);
+  $(".middle").css("top", $("#first-pic").position().top * 1.4);
 
-	
-	
+  
+  
 
 
  </script>
