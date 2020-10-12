@@ -73,15 +73,15 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
       }
 
       #example-imgs{
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        /* padding-left: 41%; */
-        padding-top: 2%;
+        grid-template-columns: : 1fr 1fr;
+        padding-top: 3vw;
         padding-bottom: 2%;
-        padding-left: 20%;
+        padding-left: 15vw;
       }
 
       .design-descr{
